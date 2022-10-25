@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="contactUs.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 class="header-text">חנות החיות המגניבה בארץ!</h1>
+    <hr />
+    <nav class="navbar">
+      <a href="../index.html">דף הבית</a>
+      <a href="./animals.html">חיות</a>
+      <a href="./contactUs.html">צור קשר</a>
+    </nav>
+    <h2>צור קשר:</h2>
+    <form class="form" action="./formaction.html">
+      <div class="form_content">
+        <div class="form_content_labels">
+          <div class="form_content_labels_firstName labels_div">
+            <label for="firstName">שם פרטי</label>
+            <input type="text" name="firstName" id="" />
+          </div>
+          <div class="form_content_labels_lastName labels_div">
+            <label for="lastName">שם משפחה</label>
+            <input type="text" name="lastName" id="" />
+          </div>
+          <div class="form_content_labels_gender labels_div">
+            <label for="gender">מין:</label>
+            <div class="gender">
+              <div class="gender_male">
+                <label for="gender">זכר</label>
+                <input type="radio" name="gender" value="male" id="" />
+              </div>
+              <div class="gender_male">
+                <label for="gender">נקבה</label>
+                <input type="radio" name="gender" value="female" id="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="form_content_labels_city labels_div">
+            <label for="city">עיר:</label>
+            <select name="city" id="">
+              <option value="tel-aviv">תל אביב</option>
+              <option value="holon">חולון</option>
+              <option value="ramat-gan">רמת גן</option>
+              <option value="givataim">גבעתיים</option>
+            </select>
+          </div>
+          <div class="form_content_labels_message labels_div">
+            <label for="message">הודעה:</label>
+            <textarea name="message" id="" cols="30" rows="10"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="form_content_buttons">
+        <button class="primary">שלח</button>
+        <button class="secondary">אפס</button>
+      </div>
+    </form>
+
+    <p id="copyrights">כל הזכויות שמורות &copy;</p>
+  </body>
+</html>
