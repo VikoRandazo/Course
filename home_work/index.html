@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>04 - Contact Us Page</title>
+  </head>
+  <body>
+    <div class="container">
+      <form class="container_form">
+        <h2>צור קשר</h2>
+        <label for="" class="label"></label>
+        <input class="input" type="text" placeholder="שם פרטי" />
+        <label for="" class="label"></label>
+        <input class="input" type="text" placeholder="שם משפחה" />
+        <label for="" class="label"></label>
+        <input class="input" type="date" />
+        <label for="" class="label"></label>
+        <input class="input" type="email" placeholder="xxx@example.com" />
+        <label for="" class="label"></label>
+        <input class="input" type="number" placeholder="מספר טלפון" />
+        <label for="" class="label"></label>
+        <input class="input" type="address" placeholder="כתובת מגורים" />
+        <label for="" class="label"></label>
+        <input class="input" type="url" placeholder="כתובת אתר אישי" />
+
+        <div class="container_form_radio">
+          <div class="container_form_radio_labels">
+            <label for="vehicle">בעל רכב :</label>
+            <label for="frontend">מפתח פרונט :</label>
+            <label for="backend">מפתח בקאנד :</label>
+          </div>
+
+          <div class="container_form_radio_radioInput">
+            <div class="vehicle radioInput">
+              <label for="vehicle">כן</label>
+              <input type="radio" name="vehicle" value="yes" />
+              <label for="vehicle">לא</label>
+              <input type="radio" name="vehicle" value="no" />
+            </div>
+            <div class="frontend radioInput">
+              <label for="frontend">כן</label>
+              <input type="radio" name="frontend" value="yes" />
+              <label for="frontend">לא</label>
+              <input type="radio" name="frontend" value="no" />
+            </div>
+            <div class="backend radioInput">
+              <label for="backend">כן</label>
+              <input type="radio" name="backend" value="yes" />
+              <label for="backend">לא</label>
+              <input type="radio" name="backend" value="no" />
+            </div>
+          </div>
+        </div>
+        <button class="submitBtn">שמור</button>
+      </form>
+    </div>
+  </body>
+</html>
