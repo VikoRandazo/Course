@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: 'Passion One', cursive;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+}
+
+.shape {
+    filter: drop-shadow(0 5px 24px rgba(0, 0, 0, 0.3));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 220px;
+    width: 70%;
+    border-radius: 24px;
+    background: linear-gradient(120deg, rgba(0,0,0,0) 0%, rgba(131,56,236,1) 13%, rgba(252,163,17,1) 30%, rgba(255,0,110,1) 58%, rgba(0,129,196,1) 78%, rgba(254,228,64,1) 100%);
+}
+h1 {
+    font-size: 60px;
+}
