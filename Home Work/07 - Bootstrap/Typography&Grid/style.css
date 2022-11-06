@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px #000;
+  height: 40px;
+}
+
+
+p {
+  width: min-content;
+  margin: 0 !important;
+  padding: 0;
+
+}
+
+.first {
+  justify-content: flex-start !important;
+  background-color: red;
+
+}
+
+.second {
+background-color: green;
+}
+
+.third {
+  background-color: blue;
+}
+
+.fourth {
+  background-color: yellow;
+  justify-content: flex-end !important;
+}
