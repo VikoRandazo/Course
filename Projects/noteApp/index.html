@@ -1,1 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>My Tasks</h1>
+      <div class="container_userinputs">
+        <textarea
+          name=""
+          cols="30"
+          rows="10"
+          class="noteDetails"
+          placeholder="Enter your task..."
+        ></textarea>
+        <input type="date" class="noteDate" placeholder="Enter Due Date..." />
+        <input type="time" class="noteHour" placeholder="Enter Final Hour" />
+      </div>
+      <div class="container_saveBtnContainer">
+        <button class="primary" onclick="createNote()">
+          <span class="material-icons saveIcon"> description </span>
+          <span class="btnText">Save</span>
+        </button>
+      </div>
 
+      <div class="container_notesContainer">
+        <ul class="notes"></ul>
+      </div>
+      <div class="container_errorModal">
+        <div class="container_errorModal_BG">
+          <div class="container_errorModal_BG_Content">
+            <h2>OOPS...</h2>
+            <p>looks like you didnt fill all the fields...</p>
+            <button class="secondary" onclick="closeModal()">
+              Fill Fields
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script defer src="script.js"></script>
+  </body>
+</html>
