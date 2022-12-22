@@ -15,6 +15,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
+  background-color: #0d1017;
 }
 
 .container_userinputs {
@@ -24,25 +25,41 @@ body {
   align-items: center;
   justify-content: center;
   gap: 24px;
-  border: 1px solid #e9ecef;
+  background-color: #0d1017;
+  border-radius: 5em;
+}
+
+.container_userinputs:focus {
+  border: 1px solid #4361ee;
 }
 
 textarea {
-  background-color: #f8f9fa;
+  background-color: transparent;
   outline: none;
   border: none;
   resize: none;
   height: 60%;
-  border-radius: 8px;
+  border-radius: 16px;
   padding: 20px;
+  color: #fff;
+  border: 1px solid #30363d;
 }
 
+textarea::placeholder {
+  color: hwb(0 100% 0%);
+}
+
+textarea:focus,
+input:focus {
+  border: 1px solid #4361ee;
+  box-shadow: 0 0 16px rgba(67, 98, 238, 0.3);
+}
 .primary {
   background-color: #4361ee;
   width: 120px;
   height: 36px;
   border: none;
-  border-radius: 8px;
+  border-radius: 1rem;
   color: #fff;
   cursor: pointer;
   display: flex;
@@ -56,7 +73,6 @@ textarea {
 .primary:hover {
   background-color: #4361ee;
   border: none;
-  border-radius: 8px;
   color: #fff;
 }
 
@@ -74,7 +90,6 @@ textarea {
 
 .primary:active {
   scale: 0.95;
-
 }
 
 @-webkit-keyframes slideIn {
@@ -112,7 +127,14 @@ input {
   border-radius: 4px;
   outline: none;
   border: none;
-  background-color: #f8f9fa;
+  background-color: #0d1117;
+  color: #fff;
+  color-scheme: dark;
+  border: 1px solid #30363d;
+}
+
+input::placeholder {
+  color: #c9d1d9;
 }
 
 .container_notesContainer {
@@ -136,17 +158,28 @@ input {
 .note {
   height: 15em;
   width: 13em;
-  background-color: #f8f9fa;
+  background-color: #0d1017;
   border-radius: 10% 10% 30% 30%;
   overflow: none;
   animation: fadeIn linear 0.3s;
   position: relative;
   padding: 16px 0 0 0;
+  color: #c9d1d9;
+  border: 1px solid #30363d;
+  transition: all 0.2s ease-in;
+}
+
+.note:hover {
+  scale: 1.05;
+  background-color: #4361ee;
+  box-shadow: 0 0 16px rgb(67, 97, 238, 0.7);
+ border: 1px solid #4361ee;
+
 }
 
 .noteDivider {
   width: 0%;
-  border-bottom: 1px solid rgb(42, 44, 65, 0.1);
+  border: 1px solid #4361ee;
 }
 
 @keyframes fadeIn {
@@ -182,7 +215,6 @@ input {
   align-items: center;
   justify-content: flex-end;
   flex-direction: column;
-
 }
 
 .closeIcon {
@@ -202,6 +234,7 @@ input {
 
 h1 {
   font-size: 56px;
+  color: #f8f9fa;
 }
 
 .container_errorModal.open {
