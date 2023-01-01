@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
-  <body>
+  <body onmousemove="cursorPosition()" onmousedown="cursorScaleUp()" onmouseup="cursorScaleBack()">
+    <div  class="cursor">•</div>
     <div class="container">
       <h1>My Tasks</h1>
       <div class="container_userinputs">
@@ -28,8 +29,8 @@
           class="noteDetails"
           placeholder="Enter your task..."
         ></textarea>
-        <input type="date" class="noteDate" placeholder="Enter Due Date..." />
-        <input type="time" class="noteHour" placeholder="Enter Final Hour" />
+        <input type="date" class="noteDate"/>
+        <input type="time" class="noteHour"/>
       </div>
       <div class="container_saveBtnContainer">
         <button class="primary" onclick="createNote()">
