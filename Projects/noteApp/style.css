@@ -1,12 +1,36 @@
 * {
   box-sizing: border-box;
+  cursor: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 body {
   margin: 0;
   padding: 0;
   font-family: "Rubik", sans-serif;
+  overflow: hidden;
 }
+
+.cursor {
+  z-index: 9999;
+  background-color: #4361ee;
+  border-radius: 3em;
+  transition: height 80ms ease-in, width 80ms ease-in;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 1;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient( #4361ee,transparent 60%); 
+}
+
+
 
 .container {
   width: 100vw;
@@ -27,10 +51,6 @@ body {
   gap: 24px;
   background-color: #0d1017;
   border-radius: 5em;
-}
-
-.container_userinputs:focus {
-  border: 1px solid #4361ee;
 }
 
 textarea {
@@ -61,12 +81,11 @@ input:focus {
   border: none;
   border-radius: 1rem;
   color: #fff;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 4px;
-  transition: all 0.2s ease-in;
+  transition: background-color 0.2s ease-in;
   position: relative;
 }
 
@@ -78,7 +97,6 @@ input:focus {
 
 .saveIcon {
   transform: translate(0%);
-
   font-size: 1.5em;
   opacity: 0;
 }
@@ -92,7 +110,7 @@ input:focus {
   scale: 0.95;
 }
 
-@-webkit-keyframes slideIn {
+@keyframes slideIn {
   0% {
     opacity: 0;
     transform: translate(-300%);
@@ -113,7 +131,7 @@ input:focus {
   animation: moveLeft 0.2s linear;
 }
 
-@-webkit-keyframes moveLeft {
+@keyframes moveLeft {
   0% {
     transform: translate(-35%, 0);
   }
@@ -156,30 +174,34 @@ input::placeholder {
 }
 
 .note {
-  height: 15em;
-  width: 13em;
+  height: 17em;
+  width: 15em;
   background-color: #0d1017;
-  border-radius: 10% 10% 30% 30%;
+  border-radius: 3em 1em;
   overflow: none;
   animation: fadeIn linear 0.3s;
   position: relative;
   padding: 16px 0 0 0;
   color: #c9d1d9;
   border: 1px solid #30363d;
-  transition: all 0.2s ease-in;
+  /* transition: background-color 0.2s ease-in, scale 0.2s ease-in; */
 }
 
 .note:hover {
   scale: 1.05;
   background-color: #4361ee;
   box-shadow: 0 0 16px rgb(67, 97, 238, 0.7);
- border: 1px solid #4361ee;
-
+  border: 1px solid #4361ee;
+}
+.noteDivider {
+  width: 37%;
+  border-color: #4361ee;
+  /* transition: width 1s ease-in-out; */
 }
 
-.noteDivider {
-  width: 0%;
-  border: 1px solid #4361ee;
+.note:hover .noteDivider {
+  border-color: #fff;
+  width: 80%;
 }
 
 @keyframes fadeIn {
@@ -192,16 +214,23 @@ input::placeholder {
 }
 
 .noteTaskContainer {
-  height: 75%;
+  height: 70%;
   width: 100%;
   overflow: auto;
   margin-bottom: 10px;
+  display: flex;
+  padding: 0 8px;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .noteTask {
   word-wrap: break-word;
-  padding: 0px 16px 24px 24px;
+  padding: 16px 16px;
   margin: 0;
+  background-color: #0d1117;
+  width: 97%;
+  border-radius: 1.5em 0.5em 1.5em 0.5em;
 }
 
 .container_saveBtnContainer {
@@ -209,7 +238,7 @@ input::placeholder {
 }
 
 .dateAndTimeContainer {
-  height: 12%;
+  height: 15%;
   width: 100%;
   display: flex;
   align-items: center;
@@ -218,11 +247,10 @@ input::placeholder {
 }
 
 .closeIcon {
-  cursor: pointer;
   position: absolute;
   top: 0;
   left: 0;
-  transform: translate(370%, -120%);
+  transform: translate(430%, -120%);
   color: #2b2d42;
   opacity: 0;
 }
@@ -285,9 +313,7 @@ h1 {
   border: 1px solid #fff;
   border-radius: 8px;
   color: #fff;
-  cursor: pointer;
   gap: 4px;
-  transition: all 0.1s ease-in;
   transform: translate(0, 75%);
 }
 
