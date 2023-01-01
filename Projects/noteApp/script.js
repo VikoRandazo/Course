@@ -1,6 +1,27 @@
 let keyName = `note`;
 let notes = [];
 
+cursorScaleUp = () => {
+  let cursor = document.querySelector(`.cursor`);
+  cursor.style.height = `1.5em`;
+  cursor.style.width = `1.5em`;
+}
+
+cursorScaleBack = () => {
+  let cursor = document.querySelector(`.cursor`);
+  cursor.style.height = `3em`;
+  cursor.style.width = `3em`;
+};
+
+cursorPosition = () => {
+  let cursor = document.querySelector(`.cursor`);
+
+  let positionX = event.x;
+  let positionY = event.y;
+  cursor.style.top = `${positionY}px`;
+  cursor.style.left = `${positionX}px`;
+};
+
 getData = () => {
   let task = document.querySelector(`.noteDetails`);
   let noteDate = document.querySelector(`.noteDate`);
@@ -15,7 +36,6 @@ getData = () => {
 pushToArray = () => {
   let data = getData();
   notes.push(data);
-
 
   return notes;
 };
@@ -50,15 +70,15 @@ closeModal = () => {
   modal.modal.classList.remove(`open`);
 };
 
-function clearFields () {
+function clearFields() {
   let task = document.querySelector(`.noteDetails`);
   let noteDate = document.querySelector(`.noteDate`);
   let noteHour = document.querySelector(`.noteHour`);
-  
+
   noteHour.value = ``;
   noteDate.value = ``;
   task.value = ``;
-};
+}
 
 createNote = () => {
   const userInputs = getData();
@@ -82,7 +102,7 @@ createNote = () => {
     let dateAndTimeContainer = document.createElement(`div`);
     let dueDate = document.createElement(`span`);
     let dueHour = document.createElement(`span`);
-    let divider = document.createElement(`hr`)
+    let divider = document.createElement(`hr`);
 
     // add classes
     newNote.classList.add(`note`);
@@ -93,7 +113,7 @@ createNote = () => {
     dueDate.classList.add(`taskDueDate`);
     dueHour.classList.add(`taskDueHour`);
     dateAndTimeContainer.classList.add(`dateAndTimeContainer`);
-    divider.classList.add(`noteDivider`)
+    divider.classList.add(`noteDivider`);
 
     // add attributes
     closeIcon.setAttribute(`onclick`, `deleteNote()`);
@@ -108,20 +128,17 @@ createNote = () => {
     newNote.appendChild(closeIcon);
     noteTaskContainer.appendChild(noteTask);
     dateAndTimeContainer.append(dueDate, dueHour);
-    newNote.append(noteTaskContainer,divider, dateAndTimeContainer);
+    newNote.append(noteTaskContainer, divider, dateAndTimeContainer);
     notesContainer.appendChild(newNote);
 
-    clearFields()
+    clearFields();
     return newNote;
   } else {
     openModal();
   }
 };
 
-
-
 deleteNote = () => {
-  localStorage.removeItem(keyName)
+  localStorage.removeItem(keyName);
   event.target.parentNode.remove();
 };
-
